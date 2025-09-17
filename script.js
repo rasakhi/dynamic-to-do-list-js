@@ -27,7 +27,14 @@ document.addEventListener('DOMContentLoaded', function () {
             li.appendChild(removeButton);
             taskList.appendChild(li);
             taskInput.value = '';
-        }
-        
+        }  
     }
+    // Add event listener to addButton
+    addButton.addEventListener('click', addTask);
+    taskInput.addEventListener('keypress', function () {
+        if (event.key === 'Enter') {
+            addTask();
+        }
+    });
+    document.addEventListener('DOMContentLoaded', addTask);
 });
